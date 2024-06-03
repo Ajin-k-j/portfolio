@@ -94,14 +94,36 @@ svg text.text-sub-body {
 
 .btn-custom {
   border-radius: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Slight background shadow */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5); /* Increase shadow size */
+  transition: box-shadow 0.3s ease-in-out; /* Add transition for smooth effect */
 }
 
 .btn-custom:hover {
   background-color: var(--swapped-loader-text-color);
   color: var(--swapped-loader-bg);
   animation: custom-scale 0.3s forwards; /* Slight scale effect */
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8); /* Update box-shadow on hover with larger size */
 }
+
+/* Keyframes */
+@keyframes shadow-rotate {
+  0% {
+    box-shadow: 0 0 12px black; /* Start with a larger shadow size */
+  }
+  25% {
+    box-shadow: 0 0 12px #222; /* Rotate through different shades */
+  }
+  50% {
+    box-shadow: 0 0 12px #444;
+  }
+  75% {
+    box-shadow: 0 0 12px #666;
+  }
+  100% {
+    box-shadow: 0 0 12px black; /* Return to original shadow size */
+  }
+}
+
 
 /* Scrolling Text Styles */
 .scroll-container {
@@ -132,11 +154,11 @@ svg text.text-sub-body {
 }
 
 #scroll-txt1 {
-  margin-bottom: 10rem;
+  margin-bottom: 9rem;
 }
 
 #scroll-txt2 {
-  margin-top: 6rem;
+  margin-top: 1rem;
 }
 
 /* Profile Picture Styles */
@@ -149,7 +171,7 @@ svg text.text-sub-body {
   place-content: center;
   z-index: 999;
   position: absolute;
-  top: 25%;
+  top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: fadeIn 1s forwards, shadow-rotate 4s infinite linear;
@@ -274,3 +296,32 @@ svg text.text-sub-body {
     transform: translateX(-50%);
   }
 }
+
+
+/* icon design  */
+/* Contact Icons Styles */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: .8rem;
+  width: 5rem;
+}
+
+.contact-icons a {
+  margin: 0 1rem; /* Adjust spacing between icons */
+  font-size: 2rem; /* Adjust icon size */
+  color: #333; /* Set icon color */
+}
+
+/* Responsive Styling */
+/* @media screen and (max-width: 768px) {
+  .contact-icons {
+    flex-wrap: wrap;
+  }
+
+  .contact-icons a {
+    margin: 1rem 0; 
+  }
+} */
