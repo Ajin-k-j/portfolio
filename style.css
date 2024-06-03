@@ -192,32 +192,33 @@ svg text.text-sub-body {
   box-shadow: 0 0 20px var(--shadow-color-1);
   transition: opacity 1s ease-in-out;
 }
+/* Add this CSS to your style.css */
+
 .profile-container {
   perspective: 1000px;
+  width: 118px;
+  height: 118px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .profile-inner {
-  position: relative;
-  width: 118px;
-  height: 118px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
 
-.profile-container:hover .profile-inner {
-  transform: rotateY(180deg);
-}
-
-.profile-front, .profile-back {
+.profile-front,
+.profile-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; /* Safari */
 }
 
 .profile-front {
-  z-index: 2;
   transform: rotateY(0deg);
 }
 
@@ -225,6 +226,9 @@ svg text.text-sub-body {
   transform: rotateY(180deg);
 }
 
+.profile-flip {
+  transform: rotateY(180deg);
+}
 
 @keyframes fadeIn {
   from {
@@ -398,3 +402,26 @@ svg text.text-sub-body {
     margin: 1rem 0; 
   }
 } */
+
+/* modal styling */
+/* Additional styling for the modal (if needed) */
+.modal-content {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.modal-body a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.modal-body a:hover {
+  text-decoration: underline;
+}
+.egg-icon {
+  font-size: 24px; /* Adjust size as needed */
+  color: #ffd700; /* Adjust color as needed */
+  margin-right: 5px; /* Add some spacing */
+}
+
+/* tooltip text for easter egg hint */

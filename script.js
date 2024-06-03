@@ -64,3 +64,34 @@ function animateCircles() {
 }
 
 animateCircles();
+
+//pic flip on hover
+
+document.addEventListener("DOMContentLoaded", function () {
+  const profilePic = document.querySelector("#profile-pic .profile-inner");
+  const animatedText = document.querySelector(".text-body");
+
+  animatedText.addEventListener("mouseenter", function () {
+    profilePic.classList.add("profile-flip");
+  });
+
+  animatedText.addEventListener("mouseleave", function () {
+    profilePic.classList.remove("profile-flip");
+  });
+});
+
+//easter egg reveler
+
+let clickCount = 0;
+const profilePic = document.getElementById("profile-pic");
+
+profilePic.addEventListener("click", () => {
+  clickCount++;
+  if (clickCount === 3) {
+    $("#easterEggModal").modal("show");
+    clickCount = 0; // Reset the click count
+  }
+});
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
