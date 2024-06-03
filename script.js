@@ -66,11 +66,3 @@ function animateCircles() {
  
 animateCircles();
 
-// ajin k j text hover effect
-const textElement = document.getElementById('animatedText');
-
-    textElement.addEventListener('mousehover', () => {
-        textElement.style.animation = 'none';
-        textElement.offsetHeight; /* trigger reflow */
-        textElement.style.animation = '';
-    });

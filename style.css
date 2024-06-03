@@ -3,6 +3,10 @@
   --loader-bg: #100319;
   --swapped-loader-text-color: #100319;
   --swapped-loader-bg: #f6e9fe;
+  --shadow-color-1: rgba(255, 0, 0, 0.5); /* Red */
+  --shadow-color-2: rgba(0, 255, 0, 0.5); /* Green */
+  --shadow-color-3: rgba(0, 0, 255, 0.5); /* Blue */
+  --shadow-color-4: rgba(255, 255, 0, 0.5); /* Yellow */
 }
 
 html {
@@ -11,6 +15,7 @@ html {
   line-height: 1.5;
 }
 
+/* Loader Container */
 .loader-container {
   position: fixed;
   inset: 0;
@@ -24,11 +29,13 @@ html {
   animation: swap-bg-color 1s 6s forwards;
 }
 
+/* SVG Styles */
 svg {
   width: 25rem;
   position: relative;
   cursor: none; /* Hide default cursor */
 }
+
 .text-sub-body {
   z-index: 996;
 }
@@ -40,16 +47,14 @@ svg text {
 
 svg text.text-body {
   stroke: var(--loader-text-color);
-  animation: animate-stroke 5s forwards, swap-text-color 1s 6s forwards,
-    pulse 2s 7s infinite;
+  animation: animate-stroke 5s forwards, swap-text-color 1s 6s forwards, pulse 2s 7s infinite;
   fill: var(--loader-text-color);
   transform-origin: center;
 }
 
 svg text.text-sub-body {
   stroke: var(--loader-text-color);
-  animation: animate-stroke 3s 3s infinite alternate, fadeIn 0s 3s forwards,
-    swap-text-color 1s 6s forwards;
+  animation: animate-stroke 3s 3s infinite alternate, fadeIn 0s 3s forwards, swap-text-color 1s 6s forwards;
   opacity: 0;
 }
 
@@ -59,6 +64,140 @@ svg text.text-sub-body {
   letter-spacing: 1.5px;
 }
 
+/* Arrow Styles */
+.arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: arrows-fade-in 0s 7s forwards, pulse 2s 7s infinite;
+}
+
+.arrow-left, .arrow-right {
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Button Styles */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-top: 0.6rem;
+  opacity: 0;
+  animation: arrows-fade-in 0s 7s forwards;
+}
+
+.btn-custom {
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Slight background shadow */
+}
+
+.btn-custom:hover {
+  background-color: var(--swapped-loader-text-color);
+  color: var(--swapped-loader-bg);
+  animation: custom-scale 0.3s forwards; /* Slight scale effect */
+}
+
+/* Scrolling Text Styles */
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: transparent;
+  opacity: 0;
+  animation: fadeIn 0s 7s forwards;
+}
+
+.scroll-text {
+  display: inline-block;
+  animation: scroll 20s linear infinite; /* Slower scrolling */
+  font-size: 1.5rem; /* Increase font size */
+  font-family: "Poppins", sans-serif; /* Apply Google Font */
+  color: #333; /* Text color */
+  font-weight: bold;
+}
+
+.scroll-text.reverse {
+  animation-direction: reverse; /* Reverse animation direction */
+}
+
+.scroll-text:hover {
+  animation-direction: reverse;
+}
+
+#scroll-txt1 {
+  margin-bottom: 10rem;
+}
+
+#scroll-txt2 {
+  margin-top: 6rem;
+}
+
+/* Profile Picture Styles */
+#profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Make the profile picture circular */
+  opacity: 0;
+  display: grid;
+  place-content: center;
+  z-index: 999;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 1s forwards, shadow-rotate 4s infinite linear;
+  box-shadow: 0 0 20px var(--shadow-color-1);
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shadow-rotate {
+  0% {
+    box-shadow: 0 0 20px var(--shadow-color-1);
+  }
+  25% {
+    box-shadow: 0 0 20px var(--shadow-color-2);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--shadow-color-3);
+  }
+  75% {
+    box-shadow: 0 0 20px var(--shadow-color-4);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--shadow-color-1);
+  }
+}
+
+/* Custom Cursor */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/* Keyframes */
 @keyframes animate-stroke {
   0% {
     fill: transparent;
@@ -74,8 +213,7 @@ svg text.text-sub-body {
     stroke-width: 3;
   }
 
-  80%,
-  100% {
+  80%, 100% {
     fill: var(--loader-text-color);
     stroke: transparent;
     stroke-width: 3;
@@ -104,8 +242,7 @@ svg text.text-sub-body {
 }
 
 @keyframes pulse {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
 
@@ -120,43 +257,6 @@ svg text.text-sub-body {
   }
 }
 
-.arrows {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  margin-top: 2rem;
-  opacity: 0;
-  animation: arrows-fade-in 0s 7s forwards, pulse 2s 7s infinite;
-}
-
-.arrow-left,
-.arrow-right {
-  font-size: 2rem;
-  transition: transform 0.3s ease-in-out;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  text-align: center;
-  margin-top: 0.6rem;
-  opacity: 0;
-  animation: arrows-fade-in 0s 7s forwards;
-}
-
-.btn-custom {
-  border-radius: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Slight background shadow */
-}
-
-.btn-custom:hover {
-  background-color: var(--swapped-loader-text-color);
-  color: var(--swapped-loader-bg);
-  animation: custom-scale 0.3s forwards; /* Slight scale effect */
-}
 @keyframes custom-scale {
   0% {
     transform: scale(1);
@@ -173,82 +273,4 @@ svg text.text-sub-body {
   100% {
     transform: translateX(-50%);
   }
-}
-.scroll-container {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  background-color: transparent; /* Background color set to white */
-  opacity: 0;
-  animation: fadeIn 0s 7s forwards;
-}
-
-.scroll-text {
-  display: inline-block;
-  animation: scroll 20s linear infinite; /* Slower scrolling */
-  font-size: 1.5rem; /* Increase font size */
-  font-family: "Poppins", sans-serif; /* Apply Google Font */
-  color: #333; /* Text color */
-  font-weight: bold;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Animation for second scrolling text */
-.scroll-text.reverse {
-  animation-direction: reverse; /* Reverse animation direction */
-}
-.scroll-text:hover {
-  animation-direction: reverse;
-}
-.text-body:hover {
-  animation-direction: reverse;
-}
-#scroll-txt1 {
-  margin-bottom: 6rem;
-}
-#scroll-txt2 {
-  margin-top: 4rem;
-}
-#customCursor{
-  opacity: 0;
-  display: grid;
-  place-content: center;
-  z-index: 999;
-  animation:fadeIn 0s 6s forwards;
-}
-
-
-/* mouse hover image pop effect */
-
-/* #customCursor {
-    display: none;
-    position: absolute;
-    z-index: 998;
-}
-
-.svg:hover #customCursor {
-    display: block;
-    cursor: none;
-} */
-
-/* mouse pointer effect */
-.circle {
-  height: 24px;
-  width: 24px;
-  border-radius: 24px;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999999; /* so that it stays on top of all other elements */
 }
