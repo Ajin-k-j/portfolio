@@ -15,6 +15,18 @@ html {
   line-height: 1.5;
 }
 
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  #scroll-txt1 {
+    /* margin-bottom: 10rem; */
+    padding-bottom: 9vw;
+  }
+  
+  #scroll-txt2 {
+    margin-top: 1rem;
+  }
+}
+
 /* Loader Container */
 .loader-container {
   position: fixed;
@@ -47,14 +59,16 @@ svg text {
 
 svg text.text-body {
   stroke: var(--loader-text-color);
-  animation: animate-stroke 5s forwards, swap-text-color 1s 6s forwards, pulse 2s 7s infinite;
+  animation: animate-stroke 5s forwards, swap-text-color 1s 6s forwards,
+    pulse 2s 7s infinite;
   fill: var(--loader-text-color);
   transform-origin: center;
 }
 
 svg text.text-sub-body {
   stroke: var(--loader-text-color);
-  animation: animate-stroke 3s 3s infinite alternate, fadeIn 0s 3s forwards, swap-text-color 1s 6s forwards;
+  animation: animate-stroke 3s 3s infinite alternate, fadeIn 0s 3s forwards,
+    swap-text-color 1s 6s forwards;
   opacity: 0;
 }
 
@@ -75,7 +89,8 @@ svg text.text-sub-body {
   animation: arrows-fade-in 0s 7s forwards, pulse 2s 7s infinite;
 }
 
-.arrow-left, .arrow-right {
+.arrow-left,
+.arrow-right {
   font-size: 2rem;
   transition: transform 0.3s ease-in-out;
 }
@@ -124,7 +139,6 @@ svg text.text-sub-body {
   }
 }
 
-
 /* Scrolling Text Styles */
 .scroll-container {
   width: 100%;
@@ -163,8 +177,8 @@ svg text.text-sub-body {
 
 /* Profile Picture Styles */
 #profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%; /* Make the profile picture circular */
   opacity: 0;
   display: grid;
@@ -235,7 +249,8 @@ svg text.text-sub-body {
     stroke-width: 3;
   }
 
-  80%, 100% {
+  80%,
+  100% {
     fill: var(--loader-text-color);
     stroke: transparent;
     stroke-width: 3;
@@ -264,7 +279,8 @@ svg text.text-sub-body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
 
@@ -297,7 +313,6 @@ svg text.text-sub-body {
   }
 }
 
-
 /* icon design  */
 /* Contact Icons Styles */
 .contact-icons {
@@ -305,7 +320,7 @@ svg text.text-sub-body {
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
   width: 5rem;
 }
 
