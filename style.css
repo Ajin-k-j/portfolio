@@ -213,16 +213,17 @@ svg text.text-sub-body {
   animation-direction: reverse;
 }
 #scroll-txt1 {
-  margin-bottom: 9rem;
+  margin-bottom: 6rem;
 }
 #scroll-txt2 {
-  margin-top: 7rem;
+  margin-top: 4rem;
 }
 #customCursor{
-  opacity: 1;
+  opacity: 0;
   display: grid;
   place-content: center;
   z-index: 999;
+  animation:fadeIn 0s 6s forwards;
 }
 
 
