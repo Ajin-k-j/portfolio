@@ -95,3 +95,15 @@ profilePic.addEventListener("click", () => {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+
+// button click eventlistners
+ // Get references to the buttons
+ function navigateToPage(page) {
+  window.location.href = page;
+}
+
+function downloadCV() {
+  // Replace 'your-cv-file.pdf' with the actual filename of your CV
+  window.open('Resume.pdf', '_blank');
+}
