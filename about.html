@@ -51,6 +51,16 @@
         opacity: 0;
         transition: opacity 0.2s ease-out, transform 0.4s ease-out; /* Smooth animation */
       }
+      .skillset-card .d-flex {
+        transition: transform 0.3s ease, background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .skillset-card .d-flex:hover {
+        transform: scale(1.1);
+        color: #0ce5f5; /* Text color on hover */
+        background-color: #007bff; /* Background color on hover */
+      }
     </style>
   </head>
   <body class="d-flex flex-column h-100">
@@ -79,13 +89,28 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
               <li class="nav-item">
-                <a class="nav-link content-div" data-message="It's a trap! Don't click it, or you'll end up back at home again." href="index.html">Home</a>
+                <a
+                  class="nav-link content-div"
+                  data-message="It's a trap! Don't click it, or you'll end up back at home again."
+                  href="index.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link content-div" data-message="It's the same page you're looking at.." href="about.html">About</a>
+                <a
+                  class="nav-link content-div"
+                  data-message="It's the same page you're looking at.."
+                  href="about.html"
+                  >About</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link content-div" data-message="If you need any help, do contact Ajin. He's got talent... and a good Wi-Fi connection!" href="contact.html">Contact</a>
+                <a
+                  class="nav-link content-div"
+                  data-message="If you need any help, do contact Ajin. He's got talent... and a good Wi-Fi connection!"
+                  href="contact.html"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
@@ -109,9 +134,16 @@
             <div class="col-xxl-8">
               <div class="text-center my-5">
                 <h2 class="display-5 fw-bolder">
-                  <span class="text-gradient d-inline content-div" data-message="It's not about me, it's Ajin's about.">About Me</span>
+                  <span
+                    class="text-gradient d-inline content-div"
+                    data-message="It's not about me, it's Ajin's about."
+                    >About Me</span
+                  >
                 </h2>
-                <p class="text-muted content-div" data-message="Bla bla bla... Anyway, he's pretty good at what he does.">
+                <p
+                  class="text-muted content-div"
+                  data-message="Bla bla bla... Anyway, he's pretty good at what he does."
+                >
                   I am a Mechatronics Engineer with a passion for programming,
                   automation, and machine learning. I have a strong background
                   in both hardware and software development and am always eager
@@ -130,7 +162,10 @@
                     href="https://linkedin.com/in/ajin-k-j"
                     ><i class="bi bi-linkedin"></i
                   ></a>
-                  <a class="text-gradient content-div" data-message="Looks like a cat, but it's called GitHub. Meow, code" href="https://github.com/yourprofile"
+                  <a
+                    class="text-gradient content-div"
+                    data-message="Looks like a cat, but it's called GitHub. Meow, code"
+                    href="https://github.com/yourprofile"
                     ><i class="bi bi-github"></i
                   ></a>
                 </div>
@@ -141,7 +176,10 @@
       </section>
 
       <div class="container px-5 my-5">
-        <div class="text-center mb-5 content-div" data-message="It's Ajin K J's resume. You can have a look, but I'm not coming along for the interview!">
+        <div
+          class="text-center mb-5 content-div"
+          data-message="It's Ajin K J's resume. You can have a look, but I'm not coming along for the interview!"
+        >
           <h1 class="display-5 fw-bolder mb-0">
             <span class="text-gradient d-inline">Resume</span>
           </h1>
@@ -263,7 +301,9 @@
                           2016-2017
                         </div>
                         <div class="mb-2">
-                          <div class="small fw-bolder">St. Xaviers Central School</div>
+                          <div class="small fw-bolder">
+                            St. Xaviers Central School
+                          </div>
                           <div class="small text-muted">Palakkad, Kerala</div>
                         </div>
                         <div class="fst-italic">
@@ -286,106 +326,46 @@
 
             <!-- Skills Section-->
             <section>
-              <h2 class="text-secondary fw-bolder mb-4">Skills</h2>
-              <div class="card shadow border-0 rounded-4 mb-5">
-                <div class="card-body p-5">
-                  <div class="row gx-5">
-                    <div class="col-md-6">
+              <!-- Skillset Card-->
+              <div class="card shadow border-0 rounded-4 mb-5 skillset-card">
+                  <div class="card-body p-5">
+                      <!-- Professional skills list-->
                       <div class="mb-5">
-                        <div
-                          class="small fw-bolder text-uppercase text-muted mb-2"
-                        >
-                          Programming Languages
-                        </div>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>Python</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>C</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>C++</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>HTML, CSS</div>
-                            </div>
-                          </li>
-                        </ul>
+                          <div class="d-flex align-items-center mb-4">
+                              <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
+                              <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>
+                          </div>
+                          <div class="row row-cols-1 row-cols-md-3 mb-4">
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SEO/SEM Marketing</div></div>
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Statistical Analysis</div></div>
+                              <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Web Development</div></div>
+                          </div>
+                          <div class="row row-cols-1 row-cols-md-3">
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Network Security</div></div>
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adobe Software Suite</div></div>
+                              <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">User Interface Design</div></div>
+                          </div>
                       </div>
+                      <!-- Languages list-->
                       <div class="mb-0">
-                        <div
-                          class="small fw-bolder text-uppercase text-muted mb-2"
-                        >
-                          Software & Tools
-                        </div>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>MatLab</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>Proteus</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>AutoCAD</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>Photoshop</div>
-                            </div>
-                          </li>
-                          <li class="mb-2">
-                            <div class="d-flex align-items-center">
-                              <i
-                                class="bi bi-arrow-right me-2 text-primary"
-                              ></i>
-                              <div>MS Office</div>
-                            </div>
-                          </li>
-                        </ul>
+                          <div class="d-flex align-items-center mb-4">
+                              <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
+                              <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span></h3>
+                          </div>
+                          <div class="row row-cols-1 row-cols-md-3 mb-4">
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div></div>
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div></div>
+                              <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>
+                          </div>
+                          <div class="row row-cols-1 row-cols-md-3">
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>
+                              <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Ruby</div></div>
+                              <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Node.js</div></div>
+                          </div>
                       </div>
-                    </div>
                   </div>
-                </div>
               </div>
-            </section>
+          </section>
 
             <!-- Awards Section
             <section>
@@ -502,7 +482,6 @@
           <div class="col-auto">
             <div class="small m-0">Copyright © AJIN K J 2024</div>
           </div>
-          
         </div>
       </div>
     </footer>
@@ -552,7 +531,7 @@
 
         // Adjust message position to prevent it from going beyond the screen
         if (mouseX + message.offsetWidth + offsetX + 40 > windowWidth) {
-          messageX = mouseX - message.offsetWidth - offsetX +40;
+          messageX = mouseX - message.offsetWidth - offsetX + 40;
         } else if (mouseX - message.offsetWidth - offsetX < 0) {
           messageX = mouseX + assistant.offsetWidth + offsetX;
         }
@@ -575,12 +554,6 @@
         words.forEach((word, index) => {
           setTimeout(() => {
             assistantMessage.textContent += word + " ";
-            if (index === words.length - 1) {
-        // If it's the last word, hide the message after a delay
-        setTimeout(() => {
-          hideAssistantMessage();
-        }, 1500); // Adjust the delay as needed
-      }
           }, index * 200); // Adjust the delay (in milliseconds) between words as needed
         });
       }
